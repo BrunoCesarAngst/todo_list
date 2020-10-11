@@ -17,6 +17,18 @@ class _HomePageState extends State<HomePage> {
   bool isChecked;
 
   @override
+    Widget build(BuildContext context) {
+      print('build HomePage');
+
+      return Scaffold(
+        appBar: AppBar(title: Text('Minhas Tarefas')),
+        floatingActionButton:
+            FloatingActionButton(child: Icon(Icons.add), onPressed: _addNewTask),
+        body: _buildTaskList(),
+      );
+    }
+
+  @override
   void initState() {
     super.initState();
     _helper.getAll().then((list) {
@@ -27,19 +39,7 @@ class _HomePageState extends State<HomePage> {
     });
     print('initState HomePage');
   }
-
-  @override
-  Widget build(BuildContext context) {
-    print('build HomePage');
-
-    return Scaffold(
-      appBar: AppBar(title: Text('Minhas Tarefas')),
-      floatingActionButton:
-          FloatingActionButton(child: Icon(Icons.add), onPressed: _addNewTask),
-      body: _buildTaskList(),
-    );
-  }
-
+  
   Widget _buildTaskList() {
     print('buildTasklist HomePage');
 
