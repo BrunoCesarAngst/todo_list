@@ -16,8 +16,6 @@ lib
 ## dev_dependencies:
 
 ```yaml
-  flutter_test:
-    sdk: flutter
   flutter_slidable: "^0.5.5"
   path_provider: ^1.1.2
   flushbar: ^1.9.0
